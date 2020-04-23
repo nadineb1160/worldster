@@ -1,0 +1,39 @@
+<h1>Worldster</h1>
+
+<h2>Places visted:</h2>
+
+<ul>
+    {{#each worldster}}
+        {{#unless visted}}
+            {{> worldster/worldster-block visited=true}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Places to see:</h2>
+
+<ul>
+    {{#each worldster}}
+        {{#if visited}}
+            {{> worldster/worldster-block visited=false}}
+        {{/if}}
+    {{/each}}
+</ul>
+
+<h2>Add a Country</h2>
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" name="country_name" id="country">
+    </div>
+
+    <div class="form-group">
+        <label for="visited">Visited?</label><br>
+        <input type="radio" name="visited" id="1" checked> Visited!<br>
+        <input type="radio" name="visited" id="0"> Wanting to Visit
+    </div>
+
+    <button type="submit">Add Country</button>
+
+</form>
