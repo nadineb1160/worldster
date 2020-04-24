@@ -1,0 +1,10 @@
+<li>
+	{{country_name}}
+
+	<button class="change-visited" data-id="{{id}}" data-newvisited="{{newVisited}}">
+		{{#if visited}}Been Here!{{else}}Go There!{{/if}}
+        {{#unless visited}}Go There!{{/unless}}
+	</button>
+
+	<button class="delete-country" data-id="{{this.id}}">DELETE!</button>
+</li>
