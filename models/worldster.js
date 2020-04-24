@@ -15,7 +15,13 @@ var worldster = {
         orm.updateOne("worldster", objColVals, condition, function(res) {
             cb(res);
         });
-    }
+    },
+    delete: function(condition, cb) {
+        orm.delete("worldster", condition, function(res) {
+            console.log(res);
+            cb(res);
+        });
+    } 
 };
 
 module.exports = worldster;
