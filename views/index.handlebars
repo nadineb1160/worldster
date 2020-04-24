@@ -3,20 +3,20 @@
 <h2>Places visted:</h2>
 
 <ul>
-    {{#each worldster}}
-        {{#unless visted}}
-            {{> worldster/worldster-block visited=true}}
-        {{/unless}}
+    {{#each country}}
+        {{#if visited}}
+            {{> country/country-block newVisited=false}}
+        {{/if}}
     {{/each}}
 </ul>
 
 <h2>Places to see:</h2>
 
 <ul>
-    {{#each worldster}}
-        {{#if visited}}
-            {{> worldster/worldster-block visited=false}}
-        {{/if}}
+    {{#each country}}
+        {{#unless visited}}
+            {{> country/country-block newVisited=true}}
+        {{/unless}}
     {{/each}}
 </ul>
 
@@ -30,8 +30,8 @@
 
     <div class="form-group">
         <label for="visited">Visited?</label><br>
-        <input type="radio" name="visited" id="1" checked> Visited!<br>
-        <input type="radio" name="visited" id="0"> Wanting to Visit
+        <input type="radio" name="visited" value="1" checked> Visited!<br>
+        <input type="radio" name="visited" value="0"> Wanting to Visit
     </div>
 
     <button type="submit">Add Country</button>
