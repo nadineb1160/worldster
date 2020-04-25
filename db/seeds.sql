@@ -1,4 +1,4 @@
-INSERT INTO worldster_db (country_name, visited)
+INSERT INTO worldster (country_name, visited)
 VALUES 
 ("Singapore", false), 
 ("China", false),
