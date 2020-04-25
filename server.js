@@ -1,9 +1,9 @@
 const express = require("express");
-var exphbs = require("express-handlebars");
+const exphbs = require("express-handlebars");
 
-var PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-var app = express();
+const app = express();
 
 app.use(express.static("public"));
 
@@ -13,7 +13,7 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/worldster_controller.js");
+const routes = require("./controllers/worldster_controller.js");
 
 app.use(routes);
 
